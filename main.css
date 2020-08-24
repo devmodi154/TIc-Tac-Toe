@@ -1,8 +1,132 @@
-td
-{
+* {
+	box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 50%;
+	padding: 30px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+body {
+	color: #eee;
+	background: #121212;
+}
+/* Game table */
+
+td {
 	height: 150px;
 	width: 150px;
+	border:10px dashed #333;
+	font-size: 50px;
+	font-family: 'Press Start 2P', cursive;
 	text-align: center;
-	border:5px solid black;
-	font-size: 100px;
+}
+table tr:first-child td {
+	border-top: 0;
+}
+table tr td:first-child {
+	border-left: 0;
+}
+table tr:last-child td {
+	border-bottom: 0;
+}
+table tr td:last-child {
+	border-right: 0;
+}
+
+/* Legend */
+p {
+	margin-left: 50px;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 30px;
+	display: inline-block;
+	color:#fff;
+}
+
+/* Restart button */
+.actionBtn3 {
+	display:block;
+	width:166px;
+	height:38px;
+	margin-left:30px;
+	text-align:center;
+	-webkit-transition:all .3s ease;
+	border-radius: 25px;
+	-moz-transition:all .3s ease;
+	transform-style:preserve-3d;
+	-webkit-transform-style:preserve-3d;
+}
+.actionBtn3 .front,.actionBtn3 .back {
+	position:absolute;
+	display:block;
+	width:166px;
+	height:38px;
+	border:1px solid #4c4c4d;
+	line-height:40px;
+	transition:all .5s;
+	-webkit-transition:-webkit-transform .5s;
+	-moz-transition:-moz-transform .5s;
+	color:#333;
+	font-size:14px;
+	font-family: 'Press Start 2P', cursive;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.actionBtn3 .front {
+	background-color:#fff;
+	transform:translateZ(19px);
+	-webkit-transform:translateZ(19px);
+	-moz-transform:translateZ(19px);
+}
+.actionBtn3 .back {
+	background-color:#121212;
+	color:#fff;
+	transform:rotateX(-90deg) translateZ(19px);
+	-webkit-transform:rotateX(-90deg) translateZ(19px);
+	-moz-transform:rotateX(-90deg) translateZ(19px);
+}
+.actionBtn3:hover {
+	transform:rotateX(90deg);
+	-webkit-transform:rotateX(90deg);
+	-moz-transform:rotateX(90deg);
+}
+
+
+
+/* Results */
+#blinking{
+	visibility: hidden;
+	margin: 30px;
+	margin-left: 50px;
+	margin-top: 50px;
+	font-size: 60px;
+	color: #ff0000;
+    animation:blinkingText 1.2s infinite;
+}
+
+@keyframes blinkingText{
+    0%{     color: #f00;    }
+    25%{    color: #f00; }
+	50%{    color: transparent; }
+	75%{    color:transparent; }
+    99%{    color:#f00;  }
+	100%{   color: #f00;   }
+}
+
+h2 {
+	font-family: 'Press Start 2P', cursive;
+	margin: 30px;
+	margin-left: 50px;
+	margin-top: 50px;
+	font-size: 30px;
+	color: #00f;
 }
